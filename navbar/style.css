@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+    height:10vh;
+    width:100%;
+    position: fixed;
+    z-index: 1000;
+    top:0;
+    left:0;
+    background-color:black;
+}
+
+
+.navbar{
+    background-color:black;
+    width: 114rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+    padding:1rem 2rem;
+}
+
+.navbar__logo{
+    font-size:2rem;
+    letter-spacing: 0.5rem;
+    font-weight: 400;
+}
+
+
+
+.navbar__links{
+    list-style:none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.navbar__item{
+    padding:2rem;
+}
+
+.navbar__link:link,.navbar__link:visited{
+    text-decoration: none;
+    color:inherit;
+    font-size: 1.4rem;
+}
+
+.toggler{
+    border:none;
+    display:none;
+    background-color: inherit;
+    outline:none;
+}
+
+.toggler__icon{
+    line-height: 3;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+}
+
+
+
+@media  (max-width:1140px) and (min-width:769px) {
+    .navbar{
+        width:76.8rem;
+    }
+}
+
+@media  (max-width:768px){
+    
+    .navbar{
+        width:100%;
+    }
+
+    .toggler{
+        display: inline-block;
+    }
+
+    .navbar__links{
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -1;
+        margin-top:-10vh;
+        padding-top: 20vh;
+        min-height: 110vh;
+        flex-direction: column;
+        background-color: black;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width:100%;
+        overflow-x: hidden;
+        transform: translateX(-100%);
+    }
+
+    .navbar__item{
+        border-bottom: 1px solid white;
+        width:100%;
+    }
+
+    @keyframes animateIN {
+        0%{
+            transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes animateOUT {
+        0%{
+            transform: translate(0);
+        }
+        100%{
+            transform: translateX(-100%);
+        }
+    }
+
+}
